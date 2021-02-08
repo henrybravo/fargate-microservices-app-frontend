@@ -1,5 +1,5 @@
 # stage1 as builder
-FROM public.ecr.aws/bitnami/node:12 as builder
+FROM public.ecr.aws/l2t8l4e1/node:14.11.0-alpine3.10 as builder
 
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
