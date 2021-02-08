@@ -1,5 +1,5 @@
 # stage1 as builder
-FROM node:12-alpine as builder
+FROM public.ecr.aws/bitnami/node:12 as builder
 
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
@@ -14,7 +14,7 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-FROM nginx:alpine
+FROM public.ecr.aws/p1r4q5e1/nginx-alpine:latest
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
