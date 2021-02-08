@@ -14,7 +14,8 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-FROM public.ecr.aws/p1r4q5e1/nginx-alpine:latest
+#
+FROM public.ecr.aws/nginx/nginx:stable-alpine
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
